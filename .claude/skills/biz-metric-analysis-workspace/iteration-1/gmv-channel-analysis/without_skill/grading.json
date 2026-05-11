@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "config": "without_skill",
+  "expectations": [
+    {"text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码", "passed": true, "evidence": "analysis.py 存在，包含基本计算和 matplotlib 柱状图"},
+    {"text": "识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高", "passed": true, "evidence": "报告指出'付费推广是最大拖累：下降 115 万，贡献了总降幅的 71.9%'"},
+    {"text": "报告中每个渠道都有贡献量和贡献率的具体数字", "passed": true, "evidence": "表格包含所有渠道的变化量、变化率和贡献占比"},
+    {"text": "识别出直播带货是正向贡献（上升30万）", "passed": true, "evidence": "提到'直播带货逆势增长：上升 30 万，+16.7%，部分抵消了下滑'"},
+    {"text": "报告中有异动验证环节，判断这次变化是否属于真实异动", "passed": false, "evidence": "报告没有异动验证步骤，直接进入数据分析，缺少对是否为真实异动的判断"},
+    {"text": "报告包含2条以上具体可行的业务建议", "passed": true, "evidence": "建议部分有 3 条建议，但不如 with_skill 具体（缺少责任方和时间节点）"},
+    {"text": "Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）", "passed": true, "evidence": "有数据概览、各渠道分析、主要发现、可能原因、建议等章节，但结构不如 with_skill 规范"}
+  ]
+}

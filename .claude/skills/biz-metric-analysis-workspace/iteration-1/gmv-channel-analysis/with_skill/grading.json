@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "config": "with_skill",
+  "expectations": [
+    {"text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码", "passed": true, "evidence": "analysis.py 存在，包含 pandas DataFrame 构建、贡献度计算、matplotlib 可视化"},
+    {"text": "识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高", "passed": true, "evidence": "报告明确指出'付费推广一个渠道贡献了总下降的 71.9%，是本周 GMV 下滑的绝对主因'，变化量 -115 万"},
+    {"text": "报告中每个渠道都有贡献量和贡献率的具体数字", "passed": true, "evidence": "贡献度拆解表列出了所有 4 个渠道的变化量、变化率和贡献度"},
+    {"text": "识别出直播带货是正向贡献（上升30万）", "passed": true, "evidence": "报告指出'直播带货逆势增长 16.7%（+30万），贡献度 -18.8%（正向抵消）'"},
+    {"text": "报告中有异动验证环节，判断这次变化是否属于真实异动", "passed": true, "evidence": "第二节'异动验证'明确判断：变化率 16.0% 超出正常周波动范围，判定为真实异动"},
+    {"text": "报告包含2条以上具体可行的业务建议", "passed": true, "evidence": "第六节列出 4 条建议，明确责任方（投放团队、运营团队、增长团队、产品团队）"},
+    {"text": "Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）", "passed": true, "evidence": "报告包含七个章节：概况、异动验证、贡献度拆解、根因分析、结论、行动建议、数据局限"}
+  ]
+}

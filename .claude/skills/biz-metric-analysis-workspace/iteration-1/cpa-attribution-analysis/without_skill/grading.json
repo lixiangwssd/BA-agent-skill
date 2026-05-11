@@ -1,0 +1,11 @@
+{
+  "eval_id": 4,
+  "config": "without_skill",
+  "expectations": [
+    {"text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码", "passed": true, "evidence": "analysis.py 存在，包含基本变化率计算"},
+    {"text": "将 CPA 拆解为消耗变化和新客数变化两个因素", "passed": true, "evidence": "概况中提到'消耗增加(+23%)的同时新客数下降(-12%)'"},
+    {"text": "识别信息流为主要拖累渠道，指出其消耗涨但转化降", "passed": true, "evidence": "表格中信息流标注为'主要问题'，提到消耗+30%新客-19%"},
+    {"text": "将已知背景（换素材、竞品大促）纳入假设分析", "passed": true, "evidence": "提到'换了新素材，很可能是新素材效果不好'和'竞品大促也可能抢走了部分用户'"},
+    {"text": "给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）", "passed": true, "evidence": "建议包含素材暂停/切回旧素材、控制预算增速、搜索加量、避免硬碰硬"}
+  ]
+}

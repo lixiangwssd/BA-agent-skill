@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "config": "without_skill",
+  "expectations": [
+    {"text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码", "passed": true, "evidence": "analysis.py 存在，包含基本漏斗计算"},
+    {"text": "识别'点击注册按钮'步骤为最大漏点（转化率下降4个百分点，UV损失最多）", "passed": true, "evidence": "提到'点击注册按钮：转化率 -4pp，新增流失最大'"},
+    {"text": "各漏斗步骤有量化的转化率变化和用户流失人数", "passed": false, "evidence": "有转化率变化，但缺少各步骤具体的绝对流失人数量化"},
+    {"text": "给出了问题排查的优先级顺序", "passed": true, "evidence": "列出了 1/2/3 的优先级排序"},
+    {"text": "列出了可能的根因假设（如页面改版、加载速度、按钮位置、文案变化等）", "passed": true, "evidence": "提到落地页改版、新增流量渠道质量低、表单复杂度、系统性能问题"},
+    {"text": "区分了转化率下降和流量变化的各自影响", "passed": false, "evidence": "没有明确区分流量变化和转化率变化的各自贡献，只是隐含提到基数大"}
+  ]
+}

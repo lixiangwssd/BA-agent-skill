@@ -1,0 +1,74 @@
+[
+  {
+    "query": "上周 GMV 环比掉了 12%，主要是华南区拖后腿，帮我按城市拆一下贡献度，看看到底是哪几个城市的问题",
+    "should_trigger": true
+  },
+  {
+    "query": "我们投放的 ROI 从上个月的 3.5 掉到了 2.8，老板让我今天出个分析报告，数据在 ~/Downloads/ad_performance_may.csv 里面，帮我跑一下看看是哪个渠道的问题",
+    "should_trigger": true
+  },
+  {
+    "query": "这个月新客转化率比上月低了 2 个点，漏斗数据我粘贴给你：落地页UV 80万，点击注册 12万，填写 5.6万，提交成功 1.2万。上月分别是 75万、15万、7.5万、2.4万。帮我定位哪一步出了问题",
+    "should_trigger": true
+  },
+  {
+    "query": "Q2 实际收入 vs 预算差了 350 万，CFO 周五要听汇报，帮我做个差异分析，数据按事业部拆分的表格我发你",
+    "should_trigger": true
+  },
+  {
+    "query": "最近一周 DAU 突然从 120 万涨到 145 万，不太正常，帮我排查一下是真实增长还是数据问题，顺便看看是哪个渠道带来的",
+    "should_trigger": true
+  },
+  {
+    "query": "cpa 上周突然飙了 60%，消耗涨了但新客数反而少了，信息流那边说是换了素材，你帮我用数据验证一下这个说法对不对",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我分析下为什么这个月毛利率从 28% 掉到了 22%，我有按品类的收入和成本明细数据在 margin_detail.xlsx 里",
+    "should_trigger": true
+  },
+  {
+    "query": "7日留存从 42% 降到 35%，产品经理说是因为新版本的引导流程改了，但我觉得还有别的原因。数据按新老用户、渠道来源都有拆分，帮我系统看一下",
+    "should_trigger": true
+  },
+  {
+    "query": "老板说竞品上个月 GMV 涨了 20%，让我调研一下他们做了什么，有没有公开数据可以参考",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我写一个 Python 脚本，每天定时从数据库拉取 GMV 数据存到 CSV，用 crontab 调度",
+    "should_trigger": false
+  },
+  {
+    "query": "我需要搭一个数据看板，展示各渠道的 GMV、订单量、客单价趋势，用 Grafana 或者 Superset 都行",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我用 matplotlib 画一个折线图，x轴是日期 y轴是 DAU，数据在 dau_daily.csv 里面",
+    "should_trigger": false
+  },
+  {
+    "query": "我们要做 AB 实验，测试新的推荐算法对转化率的影响，帮我设计实验方案，算一下需要多少样本量",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我把这个 SQL 查询优化一下，跑得太慢了，主要是 JOIN 了三张大表：order_detail、user_info、channel_mapping",
+    "should_trigger": false
+  },
+  {
+    "query": "我想预测下个月的 GMV，有过去 12 个月的历史数据，帮我用时间序列模型做个预测",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我清洗一下这个 CSV，里面有很多空值和重复行，日期格式也不统一，需要标准化成 yyyy-mm-dd",
+    "should_trigger": false
+  },
+  {
+    "query": "运营周报模板帮我做一个，每周固定汇报 GMV、订单量、新客数、复购率这几个指标的完成情况",
+    "should_trigger": false
+  },
+  {
+    "query": "我们的推荐系统 CTR 下降了 0.5%，但这个需要从模型特征层面分析，帮我看看是不是特征漂移导致的，训练数据在 s3://ml-data/features/ 里",
+    "should_trigger": false
+  }
+]
