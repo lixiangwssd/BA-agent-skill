@@ -1,0 +1,5 @@
+# skill-creator 是从 GitHub 安装的，通过 skills-lock.json 可重新安装
+.claude/skills/skill-creator
+
+# agents 缓存目录
+.agents/

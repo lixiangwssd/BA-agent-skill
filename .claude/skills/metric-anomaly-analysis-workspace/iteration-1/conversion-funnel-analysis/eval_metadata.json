@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "conversion-funnel-analysis",
+  "prompt": "这个月我们的注册转化率从上个月的 3.2% 掉到了 2.1%，整体下降了 1.1 个百分点，损失了大概 8000 个注册用户。我有漏斗各步骤数据：\n\n| 漏斗步骤 | 上月UV | 本月UV | 上月转化率 | 本月转化率 |\n|---------|--------|--------|-----------|----------|\n| 落地页访问 | 500000 | 520000 | - | - |\n| 点击注册按钮 | 125000 | 109200 | 25.0% | 21.0% |\n| 填写表单 | 62500 | 49140 | 50.0% | 45.0% |\n| 提交成功 | 16000 | 10920 | 25.6% | 22.2% |\n\n帮我用数据分析一下到底是哪个步骤出了问题，可能的原因是什么，优先级怎么排？",
+  "assertions": [
+    {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+    {"name": "identifies_biggest_dropoff", "description": "识别'点击注册按钮'步骤为最大漏点（该步骤UV损失最多：损失约15800 UV）"},
+    {"name": "quantifies_each_step_loss", "description": "各漏斗步骤有量化的用户流失人数"},
+    {"name": "provides_priority_order", "description": "给出了问题排查的优先级顺序"},
+    {"name": "has_root_cause_hypotheses", "description": "列出了可能的根因假设（如页面改版、加载速度、按钮位置、文案变化等）"}
+  ]
+}

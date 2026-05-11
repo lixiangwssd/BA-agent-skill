@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "eval_name": "gmv-channel-analysis",
+  "prompt": "我们平台上周 GMV 比前周下降了 18%，老板要求今天给出分析报告。下面是按渠道拆分的数据（单位：万元）：\n\n| 渠道 | 前周GMV | 上周GMV |\n|------|---------|--------|\n| 自然搜索 | 420 | 380 |\n| 付费推广 | 310 | 195 |\n| 直播带货 | 180 | 210 |\n| 社群裂变 | 90 | 55 |\n| 合计 | 1000 | 840 |\n\n帮我分析一下，哪个渠道是主要拖累，背后可能的原因是什么，我应该重点排查什么？",
+  "assertions": [
+    {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+    {"name": "identifies_top_loser", "description": "识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高"},
+    {"name": "quantifies_contributions", "description": "报告中每个渠道都有贡献量或贡献率的具体数字"},
+    {"name": "positive_channel_noted", "description": "识别出直播带货是正向贡献（上升30万）"},
+    {"name": "has_action_recommendations", "description": "报告包含2条以上具体可行的业务建议"},
+    {"name": "report_has_structure", "description": "Markdown报告有明确的章节结构（如概况、根因分析、建议等）"}
+  ]
+}
