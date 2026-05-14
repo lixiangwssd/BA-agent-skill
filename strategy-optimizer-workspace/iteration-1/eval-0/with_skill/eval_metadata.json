@@ -1,0 +1,6 @@
+{
+  "eval_id": 0,
+  "eval_name": "budget-allocation-strategy",
+  "prompt": "我们有100万补贴预算，要分给新用户促活、老用户留存、节日活动三类场景，请帮我们分析一下应该怎么分配最合理，需要输出一个完整的策略方案",
+  "assertions": []
+}

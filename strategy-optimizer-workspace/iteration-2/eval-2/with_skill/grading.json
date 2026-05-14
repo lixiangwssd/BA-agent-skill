@@ -1,0 +1,57 @@
+{
+  "criteria": [
+    {
+      "name": "包含业务信息确认部分",
+      "description": "是否有明确的目标和约束确认",
+      "passed": true,
+      "notes": "Section 二明确列出优化目标（新客规模+30%，CAC≤40元）和约束条件（老用户补贴率不降低，调整幅度≤30%）"
+    },
+    {
+      "name": "包含用户分群分析",
+      "description": "是否有用户分层/分群",
+      "passed": true,
+      "notes": "定义了7个用户群：新客（高/中/低活跃）、老客、沉睡、流失风险、VIP，Section 三有详细分群数据"
+    },
+    {
+      "name": "包含各用户群ROI/CAC计算",
+      "description": "是否有各群体效率指标",
+      "passed": true,
+      "notes": "Table in Section 三.2列出所有群体的CAC和ROI，各群体指标齐全"
+    },
+    {
+      "name": "包含差异化策略建议",
+      "description": "是否有针对不同群体的不同策略",
+      "passed": true,
+      "notes": "Section 四针对各群体给出差异化策略：VIP/新客高活跃加投入，新客低活跃减投入，老客保持"
+    },
+    {
+      "name": "包含策略建议且满足约束",
+      "description": "策略是否满足老客补贴率不降低",
+      "passed": true,
+      "notes": "老客月均补贴保持733元不变，补贴率19.1%未降低，完全满足约束"
+    },
+    {
+      "name": "策略调整幅度不超过30%",
+      "description": "各群体调整是否在30%以内",
+      "passed": true,
+      "notes": "最大调整为新客高活跃+30%和VIP+30%，均未超过30%阈值"
+    },
+    {
+      "name": "包含效果预估",
+      "description": "是否有规模/效率提升的量化预估",
+      "passed": true,
+      "notes": "Section 六给出量化预估：新客规模20→26人（+30%），GMV 7,162→7,600元（+6.1%），ROI 2.69→2.78（+3.3%）"
+    },
+    {
+      "name": "输出结构符合金字塔原理",
+      "description": "是否结论先行",
+      "passed": true,
+      "notes": "Section 一以核心结论开头，包含整体效果评级、建议调整方案速览、预估效果，符合金字塔原理"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  }
+}

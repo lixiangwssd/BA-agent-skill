@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "channel-budget-optimization",
+  "prompt": "我们是电商平台，计划进行渠道预算优化。请分析这份投放数据，找出最优预算分配方案。\n\n业务目标：提升整体GMV 20%，ROI从2.5提升到3.5\n业务约束：每个渠道预算调整幅度不超过30%\n\n请基于数据进行分析，给出策略建议并预估效果。",
+  "assertions": [
+    {"text": "包含业务信息确认部分", "check": "has_business_info_confirmation"},
+    {"text": "包含整体GMV和ROI计算", "check": "has_overall_metrics"},
+    {"text": "包含各渠道ROI排名分析", "check": "has_channel_roi_ranking"},
+    {"text": "包含多渠道对比分析", "check": "has_multi_channel_comparison"},
+    {"text": "包含策略建议且满足约束", "check": "has_strategy_with_constraints"},
+    {"text": "策略调整幅度不超过30%", "check": "adjustment_within_30_percent"},
+    {"text": "包含效果预估", "check": "has_effect_estimation"},
+    {"text": "输出结构符合金字塔原理（结论先行）", "check": "conclusion_first_structure"}
+  ]
+}

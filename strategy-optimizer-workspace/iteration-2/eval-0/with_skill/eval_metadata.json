@@ -1,0 +1,15 @@
+{
+  "eval_id": 0,
+  "eval_name": "subsidy-optimization",
+  "prompt": "我们是一个外卖平台，当前策略是全量补贴。请帮我们分析这份补贴数据并给出优化建议。\n\n业务目标：提升整体GMV 15%，同时保持ROI不低于3\n业务约束：新客补贴率不能低于8%，单用户单次补贴上限20元\n\n请基于数据进行分析，给出策略建议并预估效果。",
+  "assertions": [
+    {"text": "包含业务信息确认部分", "check": "has_business_info_confirmation"},
+    {"text": "包含整体GMV和ROI计算", "check": "has_overall_metrics"},
+    {"text": "包含单维度分析（用户类型/渠道）", "check": "has_single_dimension_analysis"},
+    {"text": "包含多维度交叉分析", "check": "has_cross_dimension_analysis"},
+    {"text": "包含策略建议且满足约束", "check": "has_strategy_with_constraints"},
+    {"text": "策略调整幅度不超过30%", "check": "adjustment_within_30_percent"},
+    {"text": "包含效果预估", "check": "has_effect_estimation"},
+    {"text": "输出结构符合金字塔原理（结论先行）", "check": "conclusion_first_structure"}
+  ]
+}

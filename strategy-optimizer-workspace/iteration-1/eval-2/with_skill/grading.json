@@ -1,0 +1,31 @@
+{
+  "eval_name": "eval-2",
+  "task_prompt": "我们平台上优惠券库存有限，应该怎么分配给不同用户群能让GMV最大化，给个完整的策略建议",
+  "checklist": [
+    {
+      "item": "包含用户分群方案",
+      "description": "检查是否有基于价值/敏感度的用户分层",
+      "passed": true,
+      "evidence": "Section 2 提供基于LTV和补贴敏感度的5层用户分群方案（A/B/C/D/E类），包含用户占比、活跃率、客单价等详细数据表"
+    },
+    {
+      "item": "包含差异化分配策略",
+      "description": "检查是否有针对不同用户群的不同补贴方案",
+      "passed": true,
+      "evidence": "Section 3 为每个用户群制定了差异化策略，包括面额、分配占比、发放方式、预期转化率提升和ROI"
+    },
+    {
+      "item": "预期GMV提升",
+      "description": "检查是否有量化的GMV提升预期",
+      "passed": true,
+      "evidence": "Section 4 提供量化GMV提升预期：整体+41%，Coupon ROI +69%，并有优化前后对比数据"
+    }
+  ],
+  "overall_pass": true,
+  "summary": "策略输出质量优秀。完整包含用户分群方案（5类用户基于价值和敏感度分层）、差异化分配策略（各群组面额/方式/ROI各异）、量化GMV提升预期（整体+41%）。策略逻辑清晰，数据支撑充分，具有可执行性。",
+  "grades": {
+    "user_segmentation": "pass",
+    "differentiated_strategy": "pass",
+    "gmv_projection": "pass"
+  }
+}

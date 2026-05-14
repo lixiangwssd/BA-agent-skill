@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "user-segment-subsidy",
+  "prompt": "我们是O2O平台，需要优化用户补贴策略。请分析这份用户补贴数据，给出针对不同用户群的差异化补贴方案。\n\n业务目标：新客规模提升30%，同时控制新客CAC不超过40元\n业务约束：老用户补贴率不能降低，至少保持现有水平\n\n请基于数据进行分析，给出策略建议并预估效果。",
+  "assertions": [
+    {"text": "包含业务信息确认部分", "check": "has_business_info_confirmation"},
+    {"text": "包含用户分群分析", "check": "has_user_segmentation"},
+    {"text": "包含各用户群ROI/CAC计算", "check": "has_segment_roi_cac"},
+    {"text": "包含差异化策略建议", "check": "has_differentiated_strategy"},
+    {"text": "包含策略建议且满足约束", "check": "has_strategy_with_constraints"},
+    {"text": "策略调整幅度不超过30%", "check": "adjustment_within_30_percent"},
+    {"text": "包含效果预估", "check": "has_effect_estimation"},
+    {"text": "输出结构符合金字塔原理（结论先行）", "check": "conclusion_first_structure"}
+  ]
+}

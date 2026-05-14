@@ -1,0 +1,58 @@
+{
+  "criteria": [
+    {
+      "name": "包含业务信息确认部分",
+      "description": "是否有明确的目标和约束确认",
+      "passed": true,
+      "notes": "Section 4.1 明确包含：业务目标（GMV提升15%，增量ROI从2.0到3.0）和约束条件（每个渠道预算调整幅度不超过30%）"
+    },
+    {
+      "name": "增量ROI计算正确",
+      "description": "是否使用正确公式计算各渠道增量ROI",
+      "passed": true,
+      "notes": "使用公式 增量ROI = 实验组ROI - 对照组ROI，计算正确：抖音+1.50，微信+1.00，快手+0.50，百度+0.50"
+    },
+    {
+      "name": "增量CAC计算正确",
+      "description": "是否使用正确公式计算增量CAC",
+      "passed": true,
+      "notes": "使用公式 增量CAC = 实验组CAC - 对照组CAC，计算正确：抖音-66.0，微信-49.0，快手0.0，百度-27.0"
+    },
+    {
+      "name": "包含数据验证",
+      "description": "是否对CSV数据进行了验证计算",
+      "passed": false,
+      "notes": "Section 6 仅提及数据完整性检查（4渠道×3个月=12条记录），但缺少对CSV原始数据的具体数值验证，无计算过程"
+    },
+    {
+      "name": "策略满足约束",
+      "description": "各渠道调整幅度≤30%",
+      "passed": true,
+      "notes": "所有调整建议均控制在30%以内：抖音+30%，微信+30%，快手+30%，百度+30%"
+    },
+    {
+      "name": "策略调整幅度不超过30%",
+      "description": "各渠道调整是否在30%以内",
+      "passed": true,
+      "notes": "调整后补贴均按1.30倍计算，各渠道调整幅度为30%"
+    },
+    {
+      "name": "包含效果预估",
+      "description": "是否有量化预估",
+      "passed": true,
+      "notes": "Section 4.3 提供调整后各渠道GMV预估（合计491,400）和ROI预估（约3.82），Section 5.3 也有整体预估"
+    },
+    {
+      "name": "核心结论不超过300字且在开头",
+      "description": "是否有精炼的核心结论概述",
+      "passed": false,
+      "notes": "报告开头仅为数据概况表格，核心结论散落在Section 5的策略建议总结中，未在开头提供精炼的300字以内结论概述"
+    }
+  ],
+  "summary": {
+    "total_criteria": 8,
+    "passed": 6,
+    "failed": 2,
+    "overall_score": "6/8"
+  }
+}

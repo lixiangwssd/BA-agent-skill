@@ -1,0 +1,54 @@
+{
+  "criteria": [
+    {
+      "name": "包含业务信息确认部分",
+      "description": "是否有明确的目标和约束确认",
+      "grade": "pass",
+      "evidence": "Section 二、业务信息确认明确列出优化目标(GMV提升15%, ROI≥3)和约束条件(新客补贴率≥8%, 单次补贴上限20元)"
+    },
+    {
+      "name": "包含整体GMV和ROI计算",
+      "description": "是否有准确的整体指标计算",
+      "grade": "pass",
+      "evidence": "Section 一、核心结论和Section 三、数据分析详情中准确计算了整体GMV(325.6万)和ROI(5.36)"
+    },
+    {
+      "name": "包含单维度分析",
+      "description": "是否有用户类型/渠道的分组分析",
+      "grade": "pass",
+      "evidence": "Section 3.2按用户类型分析(新客/老客), Section 3.3按渠道分析(APP/小程序)"
+    },
+    {
+      "name": "包含多维度交叉分析",
+      "description": "是否有维度的交叉分析",
+      "grade": "pass",
+      "evidence": "Section 3.4用户类型×渠道交叉分析,分析了新客-APP、新客-小程序、老客-APP、老客-小程序四个组合"
+    },
+    {
+      "name": "包含策略建议且满足约束",
+      "description": "策略是否满足新客补贴率≥8%、单次补贴≤20元",
+      "grade": "pass",
+      "evidence": "Section 4.3约束条件验证显示新客补贴率26.9%≥8%, 单次补贴≤20元满足"
+    },
+    {
+      "name": "策略调整幅度不超过30%",
+      "description": "各维度调整是否控制在30%以内",
+      "grade": "pass",
+      "evidence": "各维度调整幅度: 新客-APP -30%, 新客-小程序 -20%, 老客-APP +30%, 老客-小程序 +30%, 均在30%以内"
+    },
+    {
+      "name": "包含效果预估",
+      "description": "是否有GMV/ROI提升的量化预估",
+      "grade": "pass",
+      "evidence": "Section 5.1调整后核心指标预测: GMV 341万(+4.7%), ROI 5.81(+8.4%)"
+    },
+    {
+      "name": "输出结构符合金字塔原理",
+      "description": "是否结论先行",
+      "grade": "pass",
+      "evidence": "Section 一、核心结论置于报告最前方,包含整体效果、问题诊断、建议方案和预估效果,体现结论先行的金字塔结构"
+    }
+  ],
+  "overall": "pass",
+  "summary": "策略报告完整覆盖所有8项评估标准,包含业务目标与约束确认、整体GMV/ROI计算、单维度分析、多维度交叉分析、满足约束的策略建议、控制在30%以内的调整幅度、量化的效果预估,以及符合金字塔原理的结论先行结构。"
+}

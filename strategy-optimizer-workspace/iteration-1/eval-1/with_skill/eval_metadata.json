@@ -1,0 +1,6 @@
+{
+  "eval_id": 1,
+  "eval_name": "channel-roi-analysis",
+  "prompt": "分析一下这份渠道投放数据，找出哪个渠道ROI最高，我们应该怎么调整预算分配",
+  "assertions": []
+}

@@ -1,0 +1,6 @@
+{
+  "eval_id": 2,
+  "eval_name": "coupon-allocation-gmv",
+  "prompt": "我们平台上优惠券库存有限，应该怎么分配给不同用户群能让GMV最大化，给个完整的策略建议",
+  "assertions": []
+}
