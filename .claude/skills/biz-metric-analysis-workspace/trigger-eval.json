@@ -70,5 +70,29 @@
   {
     "query": "我们的推荐系统 CTR 下降了 0.5%，但这个需要从模型特征层面分析，帮我看看是不是特征漂移导致的，训练数据在 s3://ml-data/features/ 里",
     "should_trigger": false
+  },
+  {
+    "query": "最近数据有点波动，你帮我看看",
+    "should_trigger": true
+  },
+  {
+    "query": "GMV 涨了 10%，但转化率跌了 15%，两个一起来帮我分析一下",
+    "should_trigger": true
+  },
+  {
+    "query": "我怀疑上个月某个渠道有异常，但你先别预设，帮我客观看看数据",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我看看 DAU 曲线有没有问题",
+    "should_trigger": true
+  },
+  {
+    "query": "竞品最近数据涨了，我们跌了，帮我分析一下我们落后在哪里",
+    "should_trigger": false
+  },
+  {
+    "query": "我需要预测下季度 GMV 走向，有历史数据",
+    "should_trigger": false
   }
 ]

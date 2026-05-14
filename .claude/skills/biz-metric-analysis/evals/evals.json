@@ -56,6 +56,68 @@
         {"name": "background_integrated", "description": "将已知背景（换素材、竞品大促）纳入假设分析"},
         {"name": "actionable_recommendations", "description": "给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）"}
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "某平台 GMV 下降了 15%，但订单量上涨了 8%、客单价下降了 21%。按渠道拆分的数据如下（单位：万元）：\n\n| 渠道 | 对比期订单量 | 当期订单量 | 对比期客单价 | 当期客单价 |\n|------|------------|-----------|------------|-----------|\n| 渠道A | 5000 | 5600 | 200 | 164 |\n| 渠道B | 8000 | 7600 | 250 | 257.5 |\n\n请分析各渠道对整体 GMV 下降的贡献，识别量价交互效应，给出具体的量化拆解。",
+      "expected_output": "输出包含：1) Python 代码（乘法模型三因素分解：量变/价变/交叉效应）；2) 分析报告，识别渠道A的交叉效应（量升价降的交叉效应）和渠道B的价变正效应，计算各渠道对总变化的贡献",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_volume_price_interaction", "description": "识别量价交互效应（渠道A量升价降的交叉效应）"},
+        {"name": "quantifies_three_factors", "description": "将 GMV 变化量化为量变效应、价变效应、交叉效应三个因素"},
+        {"name": "calculates_channel_contribution", "description": "计算各渠道对整体 GMV 变化的贡献度"},
+        {"name": "identifies_top_contributor", "description": "识别渠道A是最大贡献者（量价反向变化导致交叉效应）"}
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "整体注册转化率从 3.5% 上升到 4.2%，但各渠道转化率都在下降。数据如下：\n\n| 渠道 | 对比期UV | 当期UV | 对比期注册数 | 当期注册数 | 对比期转化率 | 当期转化率 |\n|------|---------|--------|------------|----------|------------|----------|\n| 渠道A | 200000 | 600000 | 10000 | 27000 | 5.0% | 4.5% |\n| 渠道B | 800000 | 400000 | 24000 | 11200 | 3.0% | 2.8% |\n\n请分析整体转化率上升的真实原因，识别结构性变化给各渠道带来的影响。",
+      "expected_output": "输出包含：1) Python 代码（结构效应拆解：整体变化 = 组内效应 + 结构效应）；2) 分析报告，识别渠道A占比从 20% 上升到 60%（高转化率渠道占比增加导致整体上升），各渠道自身转化率实际都在下降",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_simpson_paradox", "description": "识别 Simpson 悖论：整体上升但各分段都在下降"},
+        {"name": "quantifies_structural_effect", "description": "量化结构效应（渠道占比变化对整体的影响）"},
+        {"name": "calculates_within_group_effect", "description": "计算组内效应（各渠道自身转化率下降的贡献）"},
+        {"name": "distinguishes_rate_vs_structure", "description": "区分转化率变化和人群结构变化的各自影响"}
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "用户分4轮补充信息，场景测试 Skill 是否能主动追问澄清：\n\n第1轮：用户说「最近数据有点波动，你帮我看看」\n第2轮：用户说「主要是 GMV，环比上周掉了」\n第3轮：用户粘贴数据（渠道拆分的 GMV 数据，付费推广下降最多）\n第4轮：用户说「华南那边可能有点问题？」\n\n请模拟 Skill 的回应，正确使用每轮用户提供的信息，最终产出完整的分析报告。",
+      "expected_output": "输出包含：1) Skill 对每轮追问的回应；2) 最终完整的 Markdown 分析报告，正确结合了用户提供的数据和用户提示（华南问题）",
+      "files": [],
+      "assertions": [
+        {"name": "asks_critical_clarifications", "description": "Skill 在第1轮和第2轮主动询问关键缺失信息（指标、时间、数据）"},
+        {"name": "incorporates_all_user_provided_data", "description": "正确使用第3轮用户提供的数据完成分析"},
+        {"name": "leverages_user_hint", "description": "正确响应用户提示（第4轮），重点分析华南区问题"},
+        {"name": "produces_complete_report", "description": "最终产出结构完整的分析报告"}
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "某平台 GMV 环比下降 15%。数据同时包含渠道、品类、地区三个维度：\n\n按渠道（单位：万元）：\n| 渠道 | 对比期 | 当期 |\n|------|--------|------|\n| 付费推广 | 400 | 280 |\n| 自然搜索 | 300 | 290 |\n| 直播带货 | 200 | 220 |\n\n按品类（单位：万元）：\n| 品类 | 对比期 | 当期 |\n|------|--------|------|\n| 家电 | 350 | 220 |\n| 服装 | 300 | 320 |\n| 食品 | 250 | 250 |\n\n按地区（单位：万元）：\n| 地区 | 对比期 | 当期 |\n|------|--------|------|\n| 华南 | 300 | 180 |\n| 华东 | 350 | 340 |\n| 华北 | 250 | 250 |\n\n已知背景：华南区 3 月底遭遇暴雨，部分仓库发货受影响。\n\n请先并行计算所有维度的贡献度，再对贡献最大的维度做交叉验证，最终定位根因。",
+      "expected_output": "输出包含：1) Python 代码（并行拆解所有维度 + 交叉分析）；2) 分析报告，包含：并行拆解结果、交叉维度下钻（付费推广×华南贡献最大）、结合暴雨背景的最终归因",
+      "files": [],
+      "assertions": [
+        {"name": "parallels_all_dimensions", "description": "并行拆解渠道、品类、地区所有维度"},
+        {"name": "identifies_top_contributor_cross", "description": "找到贡献度最大的维度组合（付费推广×华南）"},
+        {"name": "drills_down_to_root", "description": "下钻到根因（付费推广华南区受暴雨影响）"},
+        {"name": "combines_known_background", "description": "正确结合已知背景（暴雨）做最终归因"},
+        {"name": "quantifies_each_level", "description": "每层拆解都有量化贡献度"}
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "某产品 DAU 下降 10%，但留存率上升 5%，出现矛盾现象。数据：\n- 新增用户：下降 15%\n- 活跃用户：下降 8%\n- 流失用户：增加 12%\n\n已知：上周做了版本更新，但不确定影响方向。\n\n请分析 DAU 下降但留存上升的共同原因，给出假设验证方案。",
+      "expected_output": "输出包含：1) Python 代码（矛盾指标量化）；2) 分析报告，识别矛盾现象、提出假设（如版本更新导致老用户留下新用户流失）、给出验证方案",
+      "files": [],
+      "assertions": [
+        {"name": "identifies_causal_direction", "description": "识别 DAU 下降但留存上升的矛盾现象"},
+        {"name": "proposes_verification_plan", "description": "给出具体假设验证步骤（分群对比、版本对比）"},
+        {"name": "distinguishes_real_vs_artificial", "description": "区分真实异动和口径变化的可能"}
+      ]
     }
   ]
 }
