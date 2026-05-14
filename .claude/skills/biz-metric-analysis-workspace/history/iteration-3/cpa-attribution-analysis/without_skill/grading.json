@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 包含完整的 Python 代码：import pandas，数据定义，计算逻辑（消耗/CPA/贡献度），输出报告。文件结构完整且可执行。"
+    },
+    {
+      "text": "cpa_decomposition: 将 CPA 拆解为消耗变化和新客数变化两个因素",
+      "passed": true,
+      "evidence": "第56-58行计算了消耗变化贡献(cost_change)和CPA变化贡献(cpa_change_ratio)；第61-66行关键发现中同时分析了消耗变化(占比提升)和转化效率下降(新客数下降)两个因素。"
+    },
+    {
+      "text": "identifies_main_channel: 识别信息流为主要拖累渠道，指出其消耗涨但转化降",
+      "passed": true,
+      "evidence": "第62行明确指出'信息流渠道 CPA 从 45 涨到 72，涨幅 60%，是 CPA 上涨的主因'；第63行指出消耗占比从 58.8% 提升到 61.9%；第64行指出新客数下降了 18.7%（11111→9028），转化效率大幅下降。"
+    },
+    {
+      "text": "background_integrated: 将已知背景（换素材、竞品大促）纳入假设分析",
+      "passed": true,
+      "evidence": "第70-73行归因分析部分明确提到'根据背景信息（上周信息流渠道换了一批新素材，同时竞品在做大促）'，并将两个背景因素与渠道表现关联分析。"
+    },
+    {
+      "text": "actionable_recommendations: 给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）",
+      "passed": true,
+      "evidence": "第76-81行给出5条具体建议：1.检查新素材质量，对比新旧素材CTR和转化率，暂停低效素材；2.优化渠道预算分配，减少信息流转移到搜索；3.关注短视频渠道评估是否继续投放；4.搜索渠道可适度增加预算；5.监控竞品动态避免正面竞争。"
+    }
+  ],
+  "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0}
+}

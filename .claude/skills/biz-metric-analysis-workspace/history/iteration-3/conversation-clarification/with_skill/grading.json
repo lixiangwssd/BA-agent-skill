@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "asks_critical_clarifications: Skill 在第1轮和第2轮主动询问关键缺失信息（指标、时间、数据）",
+      "passed": true,
+      "evidence": "第1轮询问了具体指标、时间段、数据来源；第2轮询问了下降百分比和GMV拆分数据"
+    },
+    {
+      "text": "incorporates_all_user_provided_data: 正确使用第3轮用户提供的数据完成分析",
+      "passed": true,
+      "evidence": "analysis.py 和报告正确使用了用户提供的渠道拆分数据：自然流量(1200→1150万)、付费推广(800→600万)、自然搜索(500→480万)、私域流量(300→320万)、总计(2800→2550万)"
+    },
+    {
+      "text": "leverages_user_hint: 正确响应用户提示（第4轮），重点分析华南区问题",
+      "passed": true,
+      "evidence": "第4轮用户提示'华南可能有点问题'，skill 在报告中独立设置了'华南区域假设验证'章节，虽因数据限制无法直接验证，但正确识别并纳入了该线索"
+    },
+    {
+      "text": "produces_complete_report: 最终产出结构完整的分析报告",
+      "passed": true,
+      "evidence": "报告包含七大部分：概况、异动验证、贡献度拆解（含各渠道明细表格）、根因分析（含假设置信度评估）、结论、行动建议、数据局限，结构完整"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

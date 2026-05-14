@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "parallels_all_dimensions: 并行拆解渠道、品类、地区所有维度",
+      "passed": true,
+      "evidence": "代码85-106行并行计算渠道、品类、地区三个维度的贡献度，lines 90-106分别输出各维度拆解结果"
+    },
+    {
+      "text": "identifies_top_contributor_cross: 找到贡献度最大的维度组合（付费推广×华南）",
+      "passed": true,
+      "evidence": "lines 161-164：渠道维度付费推广下降120万（43.6%）与地区维度华南下降120万（43.6%）数值完全吻合，指向同一根因"
+    },
+    {
+      "text": "drills_down_to_root: 下钻到根因（付费推广华南区受暴雨影响）",
+      "passed": true,
+      "evidence": "lines 174-193假设验证，lines 210-212明确输出：华南区3月底暴雨 → 仓储发货受阻 → 付费推广渠道GMV下滑120万"
+    },
+    {
+      "text": "combines_known_background: 正确结合已知背景（暴雨）做最终归因",
+      "passed": true,
+      "evidence": "line 164明确提及'华南区3月底暴雨，导致部分仓库发货受影响'，line 211将暴雨作为根因串联到GMV下滑"
+    },
+    {
+      "text": "quantifies_each_level: 每层拆解都有量化贡献度",
+      "passed": true,
+      "evidence": "lines 90-106各维度输出变化量和贡献度%，lines 112-120维度汇总表包含'贡献度%'列，lines 161-163交叉验证时量化120万/43.6%匹配"
+    }
+  ],
+  "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": "100%"}
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 存在，包含完整的 Python 分析代码，包括数据构建、辛普森悖论分析、贡献度拆解等完整逻辑"
+    },
+    {
+      "text": "identifies_simpson_paradox: 识别 Simpson 悖论：整体上升但各分段都在下降",
+      "passed": true,
+      "evidence": "代码输出明确标注'【辛普森悖论】整体转化率从 3.4% 上升到 3.82%，但渠道A和渠道B的转化率都在下降'"
+    },
+    {
+      "text": "quantifies_structural_effect: 量化结构效应（渠道占比变化对整体的影响）",
+      "passed": true,
+      "evidence": "代码计算了'渠道结构变化贡献'：渠道A贡献 +2.0%（权重增40%×高转化率5.0%），渠道B贡献 -1.2%（权重减40%×低转化率3.0%），合计 +0.8%"
+    },
+    {
+      "text": "calculates_within_group_effect: 计算组内效应（各渠道自身转化率下降的贡献）",
+      "passed": true,
+      "evidence": "代码计算了'转化率下降贡献'：渠道A -0.30%（60%权重×-0.5%转化率变化），渠道B -0.08%（40%权重×-0.2%），合计 -0.38%"
+    },
+    {
+      "text": "distinguishes_rate_vs_structure: 区分转化率变化和人群结构变化的各自影响",
+      "passed": true,
+      "evidence": "代码明确区分两类效应：'渠道结构变化贡献' (+0.8%) 和 '转化率下降贡献' (-0.38%)，并给出汇总验证：合计 +0.42% 等于实际整体变化"
+    }
+  ],
+  "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": "100%"}
+}

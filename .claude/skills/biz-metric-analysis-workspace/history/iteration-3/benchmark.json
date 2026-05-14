@@ -1,0 +1,86 @@
+{
+  "skill_name": "biz-metric-analysis",
+  "iteration": 3,
+  "configs": [
+    {
+      "name": "with_skill",
+      "pass_rate": {"mean": 0.984, "stddev": 0.047},
+      "total_tokens": {"mean": 15210, "stddev": null},
+      "duration_seconds": {"mean": 307.8, "stddev": null}
+    },
+    {
+      "name": "without_skill",
+      "pass_rate": {"mean": 0.896, "stddev": 0.195},
+      "total_tokens": {"mean": 8688, "stddev": null},
+      "duration_seconds": {"mean": 227.5, "stddev": null}
+    }
+  ],
+  "delta": {
+    "pass_rate": "+8.8%",
+    "total_tokens": "+75.2%",
+    "duration_seconds": "+35.3%"
+  },
+  "evals": [
+    {
+      "name": "gmv-channel-analysis",
+      "with_skill": {"pass_rate": 0.857, "passed": 6, "total": 7, "tokens": 13403, "duration_s": 237},
+      "without_skill": {"pass_rate": 0.429, "passed": 3, "total": 7, "tokens": 6586, "duration_s": 267},
+      "failed_without_skill": ["quantifies_contributions", "has_anomaly_validation", "has_action_recommendations", "report_has_structure"]
+    },
+    {
+      "name": "conversion-funnel-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 14309, "duration_s": 191},
+      "without_skill": {"pass_rate": 0.833, "passed": 5, "total": 6, "tokens": 8921, "duration_s": 154},
+      "failed_without_skill": ["has_root_cause_hypotheses"]
+    },
+    {
+      "name": "budget-variance-report",
+      "with_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 11823, "duration_s": 282},
+      "without_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 6728, "duration_s": 328},
+      "failed_without_skill": []
+    },
+    {
+      "name": "cpa-attribution-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 13832, "duration_s": 385},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 7291, "duration_s": 322},
+      "failed_without_skill": []
+    },
+    {
+      "name": "volume-price-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 15382, "duration_s": 281},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 10508, "duration_s": 366},
+      "failed_without_skill": []
+    },
+    {
+      "name": "simpson-paradox-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 21514, "duration_s": 326},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 7517, "duration_s": 193},
+      "failed_without_skill": []
+    },
+    {
+      "name": "multi-dim-drilldown",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 13315, "duration_s": 306},
+      "without_skill": {"pass_rate": 0.8, "passed": 4, "total": 5, "tokens": 12993, "duration_s": 139},
+      "failed_without_skill": ["identifies_top_contributor_cross"]
+    },
+    {
+      "name": "conversation-clarification",
+      "with_skill": {"pass_rate": 1.0, "passed": 4, "total": 4, "tokens": 19681, "duration_s": 370},
+      "without_skill": {"pass_rate": 1.0, "passed": 4, "total": 4, "tokens": 8000, "duration_s": 180},
+      "failed_without_skill": []
+    },
+    {
+      "name": "contradiction-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 3, "total": 3, "tokens": 13633, "duration_s": 392},
+      "without_skill": {"pass_rate": 1.0, "passed": 3, "total": 3, "tokens": 9651, "duration_s": 98},
+      "failed_without_skill": []
+    }
+  ],
+  "analyst_observations": [
+    "with_skill 平均通过率 98.4%，without_skill 89.6%，差异 +8.8%",
+    "最大差距场景：gmv-channel-analysis（85.7% vs 42.9%），with_skill 明显优",
+    "新增场景（conversation-clarification、multi-dim-drilldown、contradiction-analysis）在 with_skill 下全部通过 100%",
+    "with_skill token 消耗高 75%（15210 vs 8688），时间也长 35%（307.8s vs 227.5s）",
+    "without_skill 在简单场景（budget-variance、cpa-attribution、volume-price）也能达到 100%，但在复杂场景（gmv-channel、conversion-funnel）有明显差距"
+  ]
+}

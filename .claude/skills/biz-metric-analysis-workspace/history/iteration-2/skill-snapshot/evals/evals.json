@@ -1,0 +1,87 @@
+{
+  "skill_name": "biz-metric-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们平台上周 GMV 比前周下降了 18%，老板要求今天给出分析报告。下面是按渠道拆分的数据（单位：万元）：\n\n| 渠道 | 前周GMV | 上周GMV |\n|------|---------|--------|\n| 自然搜索 | 420 | 380 |\n| 付费推广 | 310 | 195 |\n| 直播带货 | 180 | 210 |\n| 社群裂变 | 90 | 55 |\n| 合计 | 1000 | 840 |\n\n帮我分析一下，哪个渠道是主要拖累，背后可能的原因是什么，我应该重点排查什么？",
+      "expected_output": "输出包含：1) Python 分析代码（贡献度计算、可视化）；2) 完整的 Markdown 分析报告，包括异动验证、各渠道贡献度拆解、主要拖累渠道识别（付费推广下降115万，贡献率超60%）、根因假设树、业务建议",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_top_loser", "description": "识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高"},
+        {"name": "quantifies_contributions", "description": "报告中每个渠道都有贡献量和贡献率的具体数字"},
+        {"name": "positive_channel_noted", "description": "识别出直播带货是正向贡献（上升30万）"},
+        {"name": "has_anomaly_validation", "description": "报告中有异动验证环节，判断这次变化是否属于真实异动"},
+        {"name": "has_action_recommendations", "description": "报告包含2条以上具体可行的业务建议"},
+        {"name": "report_has_structure", "description": "Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "这个月我们的注册转化率从上个月的 3.2% 掉到了 2.1%，整体下降了 1.1 个百分点，损失了大概 8000 个注册用户。我有漏斗各步骤数据：\n\n| 漏斗步骤 | 上月UV | 本月UV | 上月转化率 | 本月转化率 |\n|---------|--------|--------|-----------|----------|\n| 落地页访问 | 500000 | 520000 | - | - |\n| 点击注册按钮 | 125000 | 109200 | 25.0% | 21.0% |\n| 填写表单 | 62500 | 49140 | 50.0% | 45.0% |\n| 提交成功 | 16000 | 10920 | 25.6% | 22.2% |\n\n帮我用数据分析一下到底是哪个步骤出了问题，可能的原因是什么，优先级怎么排？",
+      "expected_output": "输出包含：1) Python 代码（各步骤流失量、转化率变化计算）；2) 分析报告，识别出点击率下降（25%→21%）是最大漏点，逐步拆解各环节贡献，提出假设并给出优先排查顺序",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_biggest_dropoff", "description": "识别'点击注册按钮'步骤为最大漏点（转化率下降4个百分点，UV损失最多）"},
+        {"name": "quantifies_each_step", "description": "各漏斗步骤有量化的转化率变化和用户流失人数"},
+        {"name": "provides_priority_order", "description": "给出了问题排查的优先级顺序"},
+        {"name": "has_root_cause_hypotheses", "description": "列出了可能的根因假设（如页面改版、加载速度、按钮位置、文案变化等）"},
+        {"name": "distinguishes_rate_vs_volume", "description": "区分了转化率下降和流量变化的各自影响"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我是财务分析师，需要给 CFO 汇报 Q1 收入 vs 预算的差异分析。数据如下（单位：万元）：\n\n| 区域 | 预算收入 | 实际收入 | 差异 |\n|------|---------|---------|------|\n| 华东 | 800 | 856 | +56 |\n| 华南 | 600 | 498 | -102 |\n| 华北 | 500 | 445 | -55 |\n| 西部 | 300 | 321 | +21 |\n| 合计 | 2200 | 2120 | -80 |\n\n另外 CFO 已经知道华南区是因为一个大客户 3 月份延期签单导致的，这个信息可以作为已知背景。请帮我生成一份汇报用的分析报告，要专业一点，有数据有结论有建议。",
+      "expected_output": "输出包含：1) Python 代码（差异贡献度计算、达成率）；2) 专业 Markdown 报告，包含 Q1 整体达成率（96.4%）、各区域贡献分析、华南大客户延期的已知因素标注、华北的未解释差异排查建议、Q2 前瞻建议",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "mentions_achievement_rate", "description": "报告提到整体达成率（2120/2200 = 96.4%）"},
+        {"name": "nanhua_context_acknowledged", "description": "将华南区差异标注为已知背景（大客户延期），而非将其作为待排查项"},
+        {"name": "huabei_flagged_for_investigation", "description": "华北区差异（-55万，无已知原因）被标注为需要进一步排查"},
+        {"name": "q2_forward_looking", "description": "包含Q2风险提示或前瞻性行动建议"},
+        {"name": "executive_tone", "description": "报告语气专业，数据先行，结论清晰，适合CFO级别汇报"}
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "我负责投放，上周 CPA（获客成本）突然从 45 元涨到 72 元，涨了 60%。下面是分渠道和分人群的数据：\n\n按渠道：\n| 渠道 | 上上周消耗(万) | 上周消耗(万) | 上上周新客数 | 上周新客数 | 上上周CPA | 上周CPA |\n|------|-------------|------------|-----------|----------|----------|--------|\n| 信息流 | 50 | 65 | 11111 | 9028 | 45 | 72 |\n| 搜索 | 20 | 18 | 5000 | 4500 | 40 | 40 |\n| 短视频 | 15 | 22 | 4286 | 4400 | 35 | 50 |\n| 合计 | 85 | 105 | 20397 | 17928 | 42 | 59 |\n\n已知背景：上周信息流渠道换了一批新素材，同时竞品在做大促。帮我分析 CPA 上涨的原因和应对建议。",
+      "expected_output": "输出包含：1) Python 代码（CPA 拆解为消耗/新客数，各渠道贡献度计算）；2) 分析报告，识别信息流是主要驱动（消耗涨30%但新客下降19%），结合已知背景（换素材+竞品大促）给出假设验证和应对方案",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "cpa_decomposition", "description": "将 CPA 拆解为消耗变化和新客数变化两个因素"},
+        {"name": "identifies_main_channel", "description": "识别信息流为主要拖累渠道，指出其消耗涨但转化降"},
+        {"name": "background_integrated", "description": "将已知背景（换素材、竞品大促）纳入假设分析"},
+        {"name": "actionable_recommendations", "description": "给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）"}
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "某平台 GMV 下降了 15%，但订单量上涨了 8%、客单价下降了 21%。按渠道拆分的数据如下（单位：万元）：\n\n| 渠道 | 对比期订单量 | 当期订单量 | 对比期客单价 | 当期客单价 |\n|------|------------|-----------|------------|-----------|\n| 渠道A | 5000 | 5600 | 200 | 164 |\n| 渠道B | 8000 | 7600 | 250 | 257.5 |\n\n请分析各渠道对整体 GMV 下降的贡献，识别量价交互效应，给出具体的量化拆解。",
+      "expected_output": "输出包含：1) Python 代码（乘法模型三因素分解：量变/价变/交叉效应）；2) 分析报告，识别渠道A的交叉效应（量升价降的交叉效应）和渠道B的价变正效应，计算各渠道对总变化的贡献",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_volume_price_interaction", "description": "识别量价交互效应（渠道A量升价降的交叉效应）"},
+        {"name": "quantifies_three_factors", "description": "将 GMV 变化量化为量变效应、价变效应、交叉效应三个因素"},
+        {"name": "calculates_channel_contribution", "description": "计算各渠道对整体 GMV 变化的贡献度"},
+        {"name": "identifies_top_contributor", "description": "识别渠道A是最大贡献者（量价反向变化导致交叉效应）"}
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "整体注册转化率从 3.5% 上升到 4.2%，但各渠道转化率都在下降。数据如下：\n\n| 渠道 | 对比期UV | 当期UV | 对比期注册数 | 当期注册数 | 对比期转化率 | 当期转化率 |\n|------|---------|--------|------------|----------|------------|----------|\n| 渠道A | 200000 | 600000 | 10000 | 27000 | 5.0% | 4.5% |\n| 渠道B | 800000 | 400000 | 24000 | 11200 | 3.0% | 2.8% |\n\n请分析整体转化率上升的真实原因，识别结构性变化给各渠道带来的影响。",
+      "expected_output": "输出包含：1) Python 代码（结构效应拆解：整体变化 = 组内效应 + 结构效应）；2) 分析报告，识别渠道A占比从 20% 上升到 60%（高转化率渠道占比增加导致整体上升），各渠道自身转化率实际都在下降",
+      "files": [],
+      "assertions": [
+        {"name": "has_python_code", "description": "输出了 analysis.py 文件，包含可执行的 Python 分析代码"},
+        {"name": "identifies_simpson_paradox", "description": "识别 Simpson 悖论：整体上升但各分段都在下降"},
+        {"name": "quantifies_structural_effect", "description": "量化结构效应（渠道占比变化对整体的影响）"},
+        {"name": "calculates_within_group_effect", "description": "计算组内效应（各渠道自身转化率下降的贡献）"},
+        {"name": "distinguishes_rate_vs_structure", "description": "区分转化率变化和人群结构变化的各自影响"}
+      ]
+    }
+  ]
+}

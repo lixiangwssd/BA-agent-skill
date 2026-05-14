@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 保存于 iteration-2/gmv-channel-analysis/without_skill/outputs/"
+    },
+    {
+      "text": "识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高",
+      "passed": true,
+      "evidence": "分析结论中明确指出付费推广下降115万，贡献率71.9%"
+    },
+    {
+      "text": "报告中每个渠道都有贡献量和贡献率的具体数字",
+      "passed": true,
+      "evidence": "各渠道异动明细表包含变化量、变化率和贡献度"
+    },
+    {
+      "text": "识别出直播带货是正向贡献（上升30万）",
+      "passed": true,
+      "evidence": "分析结果中标注'直播带货 +30万'为唯一增长渠道"
+    },
+    {
+      "text": "报告中有异动验证环节，判断这次变化是否属于真实异动",
+      "passed": false,
+      "evidence": "分析结果中无异动验证步骤，直接进入贡献度拆解"
+    },
+    {
+      "text": "报告包含2条以上具体可行的业务建议",
+      "passed": true,
+      "evidence": "包含3条建议：暂停预算削减、评估渠道ROI、建立预警机制"
+    },
+    {
+      "text": "Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）",
+      "passed": false,
+      "evidence": "输出为纯文本分析结论，缺少标准Markdown报告结构"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 2,
+    "total": 7,
+    "pass_rate": 0.714
+  }
+}

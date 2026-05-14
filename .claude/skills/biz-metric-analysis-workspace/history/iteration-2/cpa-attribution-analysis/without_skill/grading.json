@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 保存于 iteration-2/cpa-attribution-analysis/without_skill/outputs/"
+    },
+    {
+      "text": "将 CPA 拆解为消耗变化和新客数变化两个因素",
+      "passed": true,
+      "evidence": "报告将CPA拆解为'消耗增加20万(+23.5%)但新客减少2,469人(-12.1%)'"
+    },
+    {
+      "text": "识别信息流为主要拖累渠道，指出其消耗涨但转化降",
+      "passed": true,
+      "evidence": "报告明确识别信息流渠道贡献82%CPA涨幅，消耗增15万但新客减2,083人"
+    },
+    {
+      "text": "将已知背景（换素材、竞品大促）纳入假设分析",
+      "passed": true,
+      "evidence": "报告将'信息流新素材效果差'和'竞品大促'作为根因假设纳入分析"
+    },
+    {
+      "text": "给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）",
+      "passed": true,
+      "evidence": "报告包含'暂停新素材投放'、'A/B测试验证'、'搜索渠道对冲'等具体建议"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

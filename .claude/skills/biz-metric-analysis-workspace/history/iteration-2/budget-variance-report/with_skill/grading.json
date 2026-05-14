@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 保存于 iteration-2/budget-variance-report/with_skill/outputs/"
+    },
+    {
+      "text": "报告提到整体达成率（2120/2200 = 96.4%）",
+      "passed": true,
+      "evidence": "报告明确标注整体达成率 96.4%"
+    },
+    {
+      "text": "将华南区差异标注为已知背景（大客户延期），而非将其作为待排查项",
+      "passed": true,
+      "evidence": "报告将华南区标注为'已知原因：大客户3月延期签单'，并在根因分析中说明"
+    },
+    {
+      "text": "华北区差异（-55万，无已知原因）被标注为需要进一步排查",
+      "passed": true,
+      "evidence": "报告将华北区标注为'待排查'，并给出可能假设"
+    },
+    {
+      "text": "包含Q2风险提示或前瞻性行动建议",
+      "passed": true,
+      "evidence": "行动建议中包含Q2补签可能性评估和风险提示"
+    },
+    {
+      "text": "报告语气专业，数据先行，结论清晰，适合CFO级别汇报",
+      "passed": true,
+      "evidence": "报告结构完整，包含执行摘要、贡献度拆解、根因分析和行动建议，适合高管汇报"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 包含完整 Python 代码：数据定义(pandas DataFrame)、异动验证(Z-score类计算)、贡献度拆解(各渠道消耗/新客变化率计算)、归因分析、假设验证、行动建议"
+    },
+    {
+      "text": "cpa_decomposition: 将 CPA 拆解为消耗变化和新客数变化两个因素",
+      "passed": true,
+      "evidence": "第63-65行计算消耗变化和新客变化；第74-93行计算各渠道对两个因素的贡献度；第80-81行计算渠道消耗贡献率和贡献占比"
+    },
+    {
+      "text": "identifies_main_channel: 识别信息流为主要拖累渠道，指出其消耗涨但转化降",
+      "passed": true,
+      "evidence": "第108-110行明确指出信息流'消耗+15万(+30%)，但新客-2,083人(-18.7%)'；第127行计算信息流贡献度85.3%；第197行结论'信息流渠道是CPA上涨的主因'"
+    },
+    {
+      "text": "background_integrated: 将已知背景（换素材、竞品大促）纳入假设分析",
+      "passed": true,
+      "evidence": "第151-160行假设1明确'信息流新素材效率下降是主因'，含'新素材可能目标人群匹配度下降'；第162-170行假设2明确'竞品大促分流目标人群，导致竞价成本上升'，两条假设均与背景信息吻合"
+    },
+    {
+      "text": "actionable_recommendations: 给出具体投放优化建议（如素材回滚/AB测试、预算再分配等）",
+      "passed": true,
+      "evidence": "第201-224行给出5条具体建议：1)立即暂停/控制预算+做A/B测试；2)本周分析新旧素材效率差异；3)本周优化信息流定向；4)下周监控搜索和短视频渠道；5)持续建立素材效果追踪机制+设置CPA预警阈值"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

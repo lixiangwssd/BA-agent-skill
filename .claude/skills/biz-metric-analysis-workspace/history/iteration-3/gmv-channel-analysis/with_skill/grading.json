@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 存在，包含完整的 Python 分析代码，定义数据、计算贡献度、输出分析结果"
+    },
+    {
+      "text": "identifies_top_loser: 识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高",
+      "passed": true,
+      "evidence": "输出显示：付费推广：310 → 195（-115万，-37.1%），贡献度 54.8%，是最大拖累源"
+    },
+    {
+      "text": "quantifies_contributions: 报告中每个渠道都有贡献量和贡献率的具体数字",
+      "passed": true,
+      "evidence": "四个渠道都有变化量、变化率和贡献度百分比数据，如付费推广贡献度54.8%、社群裂变16.5%、自然搜索19.0%、直播带货-14.3%"
+    },
+    {
+      "text": "positive_channel_noted: 识别出直播带货是正向贡献（上升30万）",
+      "passed": true,
+      "evidence": "输出显示：直播带货（逆势增长）变化：180 → 210（+30万，+16.7%），抵消了14.3%的下降"
+    },
+    {
+      "text": "has_anomaly_validation: 报告中有异动验证环节，判断这次变化是否属于真实异动",
+      "passed": true,
+      "evidence": "第33行输出：异动判定：真实异动（下降 12.7%，超过正常波动范围）"
+    },
+    {
+      "text": "has_action_recommendations: 报告包含2条以上具体可行的业务建议",
+      "passed": true,
+      "evidence": "包含多条具体建议：优先级P0检查付费推广投放预算/渠道归因/转化率；优先级P1检查社群裂变活动状态/分享率；关注自然搜索SEO变化"
+    },
+    {
+      "text": "report_has_structure: Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）",
+      "passed": false,
+      "evidence": "analysis.py 中通过 print 输出具有结构化章节（异动概况、各渠道贡献度分析、主要拖累分析、根因假设、结论与建议），但不存在独立的 report.md 文件"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7,
+    "pass_rate": "85.7%"
+  }
+}

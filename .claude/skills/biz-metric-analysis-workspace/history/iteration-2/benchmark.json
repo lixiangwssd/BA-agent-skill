@@ -1,0 +1,68 @@
+{
+  "skill_name": "biz-metric-analysis",
+  "iteration": 2,
+  "configs": [
+    {
+      "name": "with_skill",
+      "pass_rate": {"mean": 1.0, "stddev": 0.0},
+      "total_tokens": {"mean": 80492, "stddev": null},
+      "duration_seconds": {"mean": 216.2, "stddev": null}
+    },
+    {
+      "name": "without_skill",
+      "pass_rate": {"mean": 0.912, "stddev": null},
+      "total_tokens": {"mean": 68274, "stddev": null},
+      "duration_seconds": {"mean": 250.4, "stddev": null}
+    }
+  ],
+  "delta": {
+    "pass_rate": "+8.8%",
+    "total_tokens": "+17.9%",
+    "duration_seconds": "-13.7%"
+  },
+  "evals": [
+    {
+      "name": "gmv-channel-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 7, "total": 7, "tokens": 11452, "duration_s": 198},
+      "without_skill": {"pass_rate": 0.714, "passed": 5, "total": 7, "tokens": 6867, "duration_s": 183},
+      "failed_without_skill": ["has_anomaly_validation", "report_has_structure"]
+    },
+    {
+      "name": "conversion-funnel-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 14444, "duration_s": 219},
+      "without_skill": {"pass_rate": 0.833, "passed": 5, "total": 6, "tokens": 13594, "duration_s": 303},
+      "failed_without_skill": ["distinguishes_rate_vs_volume"]
+    },
+    {
+      "name": "budget-variance-report",
+      "with_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 19422, "duration_s": 332},
+      "without_skill": {"pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 11846, "duration_s": 283},
+      "failed_without_skill": []
+    },
+    {
+      "name": "cpa-attribution-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 15299, "duration_s": 232},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 14134, "duration_s": 234},
+      "failed_without_skill": []
+    },
+    {
+      "name": "volume-price-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 7127, "duration_s": 93},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 13186, "duration_s": 275},
+      "failed_without_skill": []
+    },
+    {
+      "name": "simpson-paradox-analysis",
+      "with_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 12748, "duration_s": 223},
+      "without_skill": {"pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 8647, "duration_s": 223},
+      "failed_without_skill": []
+    }
+  ],
+  "analyst_observations": [
+    "with_skill 在所有 34 个 assertion 中全部通过（100%），without_skill 通过 31/34（91.2%）",
+    "新增场景（volume-price-analysis、simpson-paradox-analysis）中 without_skill 全部通过，说明这两个场景对 skill 能力区分度仍然有限",
+    "主要差距依然在：异动验证（gmv-channel 缺少）和报告结构完整性",
+    "with_skill token 消耗比 without_skill 高 17.9%，但时间反而少 13.7%（效率更高）",
+    "CPA 场景和新增场景在无 skill 情况下也表现优秀，说明这些场景的分析逻辑相对直观"
+  ]
+}

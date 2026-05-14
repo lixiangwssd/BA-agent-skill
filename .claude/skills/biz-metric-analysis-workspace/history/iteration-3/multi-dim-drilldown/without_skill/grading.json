@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "parallels_all_dimensions: 并行拆解渠道、品类、地区所有维度",
+      "passed": true,
+      "evidence": "第二部分各维度贡献度拆解中，渠道(df_channel)、品类(df_category)、地区(df_region)三个维度并行计算贡献度(lines 98-113)"
+    },
+    {
+      "text": "identifies_top_contributor_cross: 找到贡献度最大的维度组合（付费推广×华南）",
+      "passed": false,
+      "evidence": "报告分别识别了华南区(-120万,-57.1%)和付费推广(-120万,-57.1%)为最大贡献项，并指出二者'高度吻合'，但未明确输出维度组合'付费推广×华南'的交叉贡献度"
+    },
+    {
+      "text": "drills_down_to_root: 下钻到根因（付费推广华南区受暴雨影响）",
+      "passed": true,
+      "evidence": "第五部分根因定位明确输出：'华南区暴雨灾害是本次 GMV 下降的核心根因'，并给出路径：华南区暴雨→仓库发货延迟/中止→影响华南区、付费推广、家电(line 194-200)"
+    },
+    {
+      "text": "combines_known_background: 正确结合已知背景（暴雨）做最终归因",
+      "passed": true,
+      "evidence": "根因分析中明确引入'华南区3月底遭遇暴雨→仓库发货受影响'作为归因背景(line 189-191)"
+    },
+    {
+      "text": "quantifies_each_level: 每层拆解都有量化贡献度",
+      "passed": true,
+      "evidence": "每个维度拆解均输出量化贡献度：华南区-57.1%、家电-61.9%、付费推广-57.1%(lines 183-186)"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

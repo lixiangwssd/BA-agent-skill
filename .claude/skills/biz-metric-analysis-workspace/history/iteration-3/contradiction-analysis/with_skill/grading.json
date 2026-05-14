@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "identifies_causal_direction: 识别 DAU 下降但留存上升的矛盾现象",
+      "passed": true,
+      "evidence": "Lines 50-66量化分析矛盾现象，Lines 68-92通过用户结构建模解释矛盾根因，Lines 215-221明确结论：'DAU 下降10%的主要驱动因素是新增用户下降15%，留存率上升是因为用户结构变化（新用户占比下降导致分母收缩）'"
+    },
+    {
+      "text": "proposes_verification_plan: 给出具体假设验证步骤（分群对比、版本对比）",
+      "passed": true,
+      "evidence": "Lines 93-164提供完整验证框架，包含4个验证步骤：(1)新老用户分群对比，(2)版本更新前后趋势对比，(3)流失用户画像分析，(4)渠道质量监控。每个步骤都明确说明预期和验证数据需求"
+    },
+    {
+      "text": "distinguishes_real_vs_artificial: 区分真实异动和口径变化的可能",
+      "passed": true,
+      "evidence": "Lines 216-221区分了三种可能原因：版本更新影响（真实体验变化）、渠道质量变化（外部因素）、自然波动（低可能性）。通过假设H1-H3明确区分了产品变化vs外部因素，并指出'新增下降15%可能是渠道收缩或渠道质量下降'暗示了口径/渠道变化的可能"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 包含完整的 Python 分析代码，包括数据定义、贡献度计算、达成率计算、差异拆解等逻辑，代码可独立执行"
+    },
+    {
+      "text": "mentions_achievement_rate: 报告提到整体达成率（2120/2200 = 96.4%）",
+      "passed": true,
+      "evidence": "输出包含 '预算达成率：{2120/2200*100:.1f}%'（96.4%）和 'Q1 收入低于预算 80 万元，整体达成率 96.4%'"
+    },
+    {
+      "text": "nanhua_context_acknowledged: 将华南区差异标注为已知背景（大客户延期），而非将其作为待排查项",
+      "passed": true,
+      "evidence": "【五、已知背景】中华南区：大客户 3 月延期签单（一次性因素，非持续性问题）；结论中明确标注为'华南大客户延期是主要拖累因素（-102 万），若剔除则超额完成预算'"
+    },
+    {
+      "text": "huabei_flagged_for_investigation: 华北区差异（-55万，无已知原因）被标注为需要进一步排查",
+      "passed": true,
+      "evidence": "结论中提到'华北下滑 55 万需关注，但幅度相对可控'；建议中明确'华北：深入分析下滑原因，判断是否市场环境变化或竞争因素'"
+    },
+    {
+      "text": "q2_forward_looking: 包含Q2风险提示或前瞻性行动建议",
+      "passed": true,
+      "evidence": "建议第4点：'全局：Q2 补欠目标 = 80 万元，需关注后续恢复情况'，以及'与该大客户保持沟通，争取 4 月补签，弥补缺口'"
+    },
+    {
+      "text": "executive_tone: 报告语气专业，数据先行，结论清晰，适合CFO级别汇报",
+      "passed": true,
+      "evidence": "报告结构清晰：【一、核心数据】→【二、差异拆解】→【三、各区域贡献度分析】→【四、关键发现】→【五、已知背景】→【六、结论与建议】，数据先行、结论明确、建议可执行"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": "100%"
+  }
+}

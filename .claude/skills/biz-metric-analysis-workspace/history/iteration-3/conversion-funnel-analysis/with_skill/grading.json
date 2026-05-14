@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 存在，包含完整的 Python 分析代码，包括数据定义、漏斗拆解、贡献度计算、归因分析等完整逻辑"
+    },
+    {
+      "text": "identifies_biggest_dropoff: 识别'点击注册按钮'步骤为最大漏点（转化率下降4个百分点，UV损失最多）",
+      "passed": true,
+      "evidence": "分析结论明确指出'主要拖累步骤：点击注册按钮'，转化率下降4个点（25%→21%），影响约15,800人"
+    },
+    {
+      "text": "quantifies_each_step: 各漏斗步骤有量化的转化率变化和用户流失人数",
+      "passed": true,
+      "evidence": "漏斗各步骤详细数据包含：上月/本月转化率、转化率变化、新增流失、流失贡献度等量化指标"
+    },
+    {
+      "text": "provides_priority_order: 给出了问题排查的优先级顺序",
+      "passed": true,
+      "evidence": "提供清晰的优先级排序：P0（立即排查）：点击注册按钮 > P1（本周内排查）：填写表单 > P2（下周排查）：提交成功"
+    },
+    {
+      "text": "has_root_cause_hypotheses: 列出了可能的根因假设（如页面改版、加载速度、按钮位置、文案变化等）",
+      "passed": true,
+      "evidence": "每个步骤都列出了4-5个可能原因，包括：注册按钮位置或样式变化、落地页内容/文案调整、流量质量下降、页面加载问题、表单字段变化、移动端适配问题、验证码增加摩擦、后端提交接口问题等"
+    },
+    {
+      "text": "distinguishes_rate_vs_volume: 区分了转化率下降和流量变化的各自影响",
+      "passed": true,
+      "evidence": "分析指出'落地页访问UV上升（50万→52万）但注册用户下降，说明流量质量下降，不是流量数量问题'，并计算了'差异：xxx人（受UV变化影响）'来区分率差影响和量差影响"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  }
+}

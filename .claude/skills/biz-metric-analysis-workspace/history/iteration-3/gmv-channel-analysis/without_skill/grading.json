@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "has_python_code: 输出了 analysis.py 文件，包含可执行的 Python 分析代码",
+      "passed": true,
+      "evidence": "analysis.py 文件存在，包含可执行的 Python 分析代码（pandas 数据处理、计算贡献度、输出结论）"
+    },
+    {
+      "text": "identifies_top_loser: 识别付费推广为最大拖累渠道，指出其下降约115万，贡献率最高",
+      "passed": true,
+      "evidence": "代码第60行输出：'付费推广下降 115 万，占总下降的 72%'，明确识别付费推广为最大拖累渠道"
+    },
+    {
+      "text": "quantifies_contributions: 报告中每个渠道都有贡献量和贡献率的具体数字",
+      "passed": false,
+      "evidence": "analysis.py 只有 print 输出（非结构化报告），没有 Markdown 报告文件。console 输出中有数值但不具备报告结构，无法作为正式报告交付物"
+    },
+    {
+      "text": "positive_channel_noted: 识别出直播带货是正向贡献（上升30万）",
+      "passed": true,
+      "evidence": "代码第62行输出：'直播带货增长 30 万，部分抵消了下滑'"
+    },
+    {
+      "text": "has_anomaly_validation: 报告中有异动验证环节，判断这次变化是否属于真实异动",
+      "passed": false,
+      "evidence": "代码中没有 Z-score/IQR 等异动验证环节，直接进行贡献度拆解，缺少'变化是否属于真实异动'的判断"
+    },
+    {
+      "text": "has_action_recommendations: 报告包含2条以上具体可行的业务建议",
+      "passed": false,
+      "evidence": "代码只有结论输出（核心结论部分），没有具体可行的业务建议，无'建议'章节"
+    },
+    {
+      "text": "report_has_structure: Markdown报告有明确的章节结构（概况、贡献拆解、根因分析、建议等）",
+      "passed": false,
+      "evidence": "不存在 report.md 文件，analysis.py 是纯代码 + print 输出，不具备 Markdown 报告结构"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 4,
+    "total": 7,
+    "pass_rate": 0.43
+  }
+}
