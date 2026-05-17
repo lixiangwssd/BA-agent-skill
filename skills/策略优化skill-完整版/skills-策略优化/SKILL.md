@@ -34,11 +34,12 @@ description: >
 - `{项目名}/strategy-library/strategies.csv` — 策略效果数据
 - `{项目名}/strategy-library/mutual-exclusion.md` — 互斥关系
 
-**如有缺失，不要生硬提示"请先运行XX skill"。** 应自然地向用户收集所需信息：
-- 询问用户的业务目标、约束条件、策略维度等基础信息
-- 询问是否有现成的项目文档或数据文件可以提供
-- 在对话中收集到足够信息后，内部自动完成前置文件的生成（经用户确认）
-- 让用户感受到的是"一个连贯的对话"，而非"被系统挡在门外"
+**如有缺失，按以下顺序自动衔接调用对应 skill：**
+1. 缺 wiki 文件（metrics.md / constraints.md）→ 调用 `business-context-alignment` skill 引导用户完成业务背景对齐
+2. 缺 strategy-library 文件（framework.md / strategies.csv / mutual-exclusion.md）→ 调用 `strategy-library` skill 建立策略库
+3. 前置 skill 完成后，自动回到策略优化流程继续执行
+
+对用户的体验应是连贯的对话流程，skill 之间的衔接对用户透明。
 
 ---
 

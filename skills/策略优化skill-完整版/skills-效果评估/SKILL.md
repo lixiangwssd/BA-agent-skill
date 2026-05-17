@@ -31,10 +31,12 @@ description: >
 - `{项目名}/strategy-library/framework.md` — 策略框架（决定按什么维度聚合）
 - `{项目名}/strategy-library/strategies.csv` — 已有策略库（输出目的地）
 
-**如前置文件不存在，不要生硬提示"请先完成XX步骤"。** 应自然地向用户收集所需信息：
-- 询问关注哪些效果指标、策略包含哪些维度、数据在哪里
-- 收集到足够信息后，内部自动生成前置文件（经用户确认）
-- 让用户体验到连贯的对话流程，而非被系统挡在门外
+**如前置文件不存在，按以下顺序自动衔接调用对应 skill：**
+1. 缺 wiki/metrics.md → 调用 `business-context-alignment` skill
+2. 缺 strategy-library 文件 → 调用 `strategy-library` skill
+3. 前置 skill 完成后，自动回到效果评估流程继续执行
+
+对用户的体验应是连贯的对话流程，skill 之间的衔接对用户透明。
 
 ---
 
