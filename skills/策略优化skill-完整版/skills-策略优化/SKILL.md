@@ -24,9 +24,11 @@ description: >
 
 ---
 
-## 前置依赖
+## 前置依赖检查
 
-运行本 skill 前，检查以下文件是否存在：
+运行本 skill 前，执行**两层检查**：
+
+### 第一层：文件存在性
 
 - `{项目名}/wiki/metrics.md` — 指标体系（目标函数和约束）
 - `{项目名}/wiki/constraints.md` — 能力约束
@@ -35,9 +37,27 @@ description: >
 - `{项目名}/strategy-library/mutual-exclusion.md` — 互斥关系
 
 **如有缺失，按以下顺序自动衔接调用对应 skill：**
-1. 缺 wiki 文件（metrics.md / constraints.md）→ 调用 `business-context-alignment` skill 引导用户完成业务背景对齐
-2. 缺 strategy-library 文件（framework.md / strategies.csv / mutual-exclusion.md）→ 调用 `strategy-library` skill 建立策略库
+1. 缺 wiki 文件（metrics.md / constraints.md）→ 调用 `business-context-alignment` skill
+2. 缺 strategy-library 文件 → 调用 `strategy-library` skill
 3. 前置 skill 完成后，自动回到策略优化流程继续执行
+
+### 第二层：建模可行性验证
+
+文件存在后，从**"我能不能建模"**的视角检查内容是否足以支撑求解：
+
+| 检查项 | 验证问题 | 不通过时调用 |
+|--------|---------|-------------|
+| 能否提取目标函数 | 有明确的优化目标指标 + 方向（max/min）？ | → `business-context-alignment` |
+| 能否提取约束 | 围栏指标都有明确阈值？有预算/资源上限？ | → `business-context-alignment` |
+| 能否加载策略效果 | csv 非空？效果列是数值？ | → `strategy-library` |
+| 指标能否对应到数据 | metrics.md 中的指标在 csv 列中都能找到？ | → `strategy-library` |
+| 能否构建互斥约束 | 互斥描述能转化为数学表达式？ | → `strategy-library` |
+
+**处理流程**：
+1. 逐项检查，汇总所有不通过项
+2. 按归属分组：属于业务背景问题 → 调 `business-context-alignment`；属于策略库问题 → 调 `strategy-library`
+3. 上游 skill 修复完成后，重新回到本 skill 再次验证
+4. 全部通过后才进入求解阶段
 
 对用户的体验应是连贯的对话流程，skill 之间的衔接对用户透明。
 
