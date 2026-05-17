@@ -46,6 +46,8 @@ description: >
 digraph evaluation {
     "接收明细数据" [shape=box];
     "读取 metrics.md 和 framework.md" [shape=box];
+    "字段映射检查" [shape=diamond];
+    "追问用户：补数据或调指标" [shape=box];
     "确定计算方法" [shape=diamond];
     "AB test 计算" [shape=box];
     "同比/环比计算" [shape=box];
@@ -56,7 +58,10 @@ digraph evaluation {
     "写入 strategies.csv" [shape=box];
 
     "接收明细数据" -> "读取 metrics.md 和 framework.md";
-    "读取 metrics.md 和 framework.md" -> "确定计算方法";
+    "读取 metrics.md 和 framework.md" -> "字段映射检查";
+    "字段映射检查" -> "追问用户：补数据或调指标" [label="有不匹配"];
+    "字段映射检查" -> "确定计算方法" [label="全部匹配"];
+    "追问用户：补数据或调指标" -> "确定计算方法";
     "确定计算方法" -> "AB test 计算" [label="有实验"];
     "确定计算方法" -> "同比/环比计算" [label="用户指定"];
     "确定计算方法" -> "DID/准实验计算" [label="无实验+需因果推断"];
@@ -68,6 +73,18 @@ digraph evaluation {
     "用户确认" -> "写入 strategies.csv";
 }
 ```
+
+### 字段映射检查（必须执行）
+
+读取数据后、进入计算前，**必须**执行：
+
+1. 从 `wiki/metrics.md` 读取所有已定义指标
+2. 从明细数据中读取所有列名
+3. 逐一检查每个指标是否有对应数据字段
+4. 如有不匹配，**向用户追问**：补充数据 or 调整指标定义
+5. 如果维度名称不一致，追问确认映射关系
+
+**禁止行为**：发现指标缺失时默默跳过或用其他字段静默替代。
 
 ---
 
